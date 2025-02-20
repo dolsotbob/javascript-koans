@@ -2,7 +2,7 @@ describe('Spread syntax에 대해 학습합니다.', function () {
   it('전개 문법(spread syntax)을 학습합니다.', function () {
     const spread = [1, 2, 3];
     // TODO: 전개 문법을 사용해 테스트 코드를 완성합니다. spread를 지우지 않고 해결할 수 있습니다.
-    const arr = [0, spread, 4];
+    const arr = [0, ...spread, 4];
     expect(arr).to.deep.equal([0, 1, 2, 3, 4]);
   });
 

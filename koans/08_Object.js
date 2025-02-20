@@ -5,8 +5,8 @@ describe('Object에 대해서 학습합니다.', function () {
   */
   it('Object의 기본을 확인합니다.', function () {
     const emptyObj = {};
-    expect(typeof emptyObj === 'object').to.equal(FILL_ME_IN);
-    expect(emptyObj.length).to.equal(FILL_ME_IN);
+    expect(typeof emptyObj === 'object').to.equal('true');
+    expect(emptyObj.length).to.equal(undefined);
 
     const megalomaniac = {
       mastermind: 'Joker',
@@ -23,13 +23,13 @@ describe('Object에 대해서 학습합니다.', function () {
       },
     };
 
-    expect(megalomaniac.length).to.equal(FILL_ME_IN);
-    expect(megalomaniac.mastermind).to.equal(FILL_ME_IN);
-    expect(megalomaniac.henchwoman).to.equal(FILL_ME_IN);
-    expect(megalomaniac.henchWoman).to.equal(FILL_ME_IN);
+    expect(megalomaniac.length).to.equal(5);
+    expect(megalomaniac.mastermind).to.equal('Joker');
+    expect(megalomaniac.henchwoman).to.equal('Harley');
+    expect(megalomaniac.henchWoman).to.equal('Harley');
     expect(megalomaniac.getMembers()).to.deep.equal(FILL_ME_IN);
     expect(megalomaniac.relations[FILL_ME_IN]).to.equal('Lucy');
-    expect(megalomaniac.twins['Heath Ledger']).to.deep.equal('FILL_ME_IN');
+    expect(megalomaniac.twins['Heath Ledger']).to.deep.equal(FILL_ME_IN);
   });
 
   it('Object의 속성(property)를 다루는 방법을 확인합니다.', function () {

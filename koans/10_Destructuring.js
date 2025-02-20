@@ -3,8 +3,8 @@ describe('구조 분해 할당(Destructing Assignment)에 관해서', () => {
     const array = ['rocket', 'boost', 'im', 'course'];
 
     const [first, second] = array;
-    expect(first).to.eql(FILL_ME_IN);
-    expect(second).to.eql(FILL_ME_IN);
+    expect(first).to.eql('rocket');
+    expect(second).to.eql('boost');
 
     const result = [];
     function foo([first, second]) {
@@ -19,8 +19,8 @@ describe('구조 분해 할당(Destructing Assignment)에 관해서', () => {
   it('rest/spread 문법을 배열 분해에 적용할 수 있습니다', () => {
     const array = ['rocket', 'boost', 'im', 'course'];
     const [start, ...rest] = array;
-    expect(start).to.eql(FILL_ME_IN);
-    expect(rest).to.eql(FILL_ME_IN);
+    expect(start).to.eql('rocket');
+    expect(rest).to.eql(['boost', 'im', 'course']);
 
     // 다음과 같은 문법은 사용할 수 없습니다. 할당하기 전 왼쪽에는, rest 문법 이후에 쉼표가 올 수 없습니다
     // const [first, ...middle, last] = array

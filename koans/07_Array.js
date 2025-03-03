@@ -1,8 +1,8 @@
 describe('Array에 대해서 학습합니다.', function () {
   it('Array의 기본을 확인합니다.', function () {
     const emptyArr = [];
-    expect(typeof emptyArr === 'array').to.equal('array');
-    expect(emptyArr.length).to.equal(FILL_ME_IN);
+    expect(typeof emptyArr === 'array').to.equal(false);
+    expect(emptyArr.length).to.equal(0);
 
     const multiTypeArr = [
       0,
@@ -18,9 +18,9 @@ describe('Array에 대해서 학습합니다.', function () {
     expect(multiTypeArr[0]).to.equal(0);
     expect(multiTypeArr[2]).to.equal('two');
     expect(multiTypeArr[3]()).to.equal(3);
-    expect(multiTypeArr[4].value1).to.equal(4, 5);
-    expect(multiTypeArr[4][value2]).to.equal(5);
-    expect(multiTypeArr[5][7]).to.equal(7);
+    expect(multiTypeArr[4].value1).to.equal(4);
+    expect(multiTypeArr[4]['value2']).to.equal(5);
+    expect(multiTypeArr[5][1]).to.equal(7);
   });
 
   it('Array의 요소(element)를 다루는 방법을 확인합니다.', function () {
@@ -31,14 +31,14 @@ describe('Array에 대해서 학습합니다.', function () {
     expect(arr).to.deep.equal([1]);
 
     arr[1] = 2;
-    expect(arr).to.deep.equal([1, FILL_ME_IN]);
+    expect(arr).to.deep.equal([1, 2]);
 
     arr.push(3);
-    expect(arr).to.deep.equal(FILL_ME_IN);
+    expect(arr).to.deep.equal([1, 2, 3]);
 
     const poppedValue = arr.pop();
-    expect(poppedValue).to.equal(FILL_ME_IN);
-    expect(arr).to.deep.equal(FILL_ME_IN);
+    expect(poppedValue).to.equal(3);
+    expect(arr).to.deep.equal([1, 2]);
   });
 
   it('Array 메소드 slice를 확인합니다.', function () {
@@ -66,11 +66,11 @@ describe('Array에 대해서 학습합니다.', function () {
       refArr[1] = 'changed in function';
     }
     passedByReference(arr);
-    expect(arr[1]).to.equal('one');
+    expect(arr[1]).to.equal('changed in function');
 
     const assignedArr = arr;
     assignedArr[5] = 'changed in assignedArr';
-    expect(arr[5]).to.equal('five');
+    expect(arr[5]).to.equal('changed in assignedArr');
 
     const copiedArr = arr.slice();
     copiedArr[3] = 'changed in copiedArr';

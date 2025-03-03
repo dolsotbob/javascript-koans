@@ -24,7 +24,7 @@ describe('화살표 함수에 관해서', function () {
 
     // 파라미터가 하나일 경우 소괄호 생략이 가능합니다
     const divideBy10 = (x) => x / 10;
-    expect(divideBy10(100)).to.eql(0.1);
+    expect(divideBy10(100)).to.eql(10);
   });
 
   it('화살표 함수를 이용해 클로저를 표현합니다', function () {
@@ -44,10 +44,10 @@ describe('화살표 함수에 관해서', function () {
 
     const htmlMaker = (tag) => (textContent) =>
       `<${tag}>${textContent}</${tag}>`;
-    expect(htmlMaker('div')('rocket boost')).to.eql('div');
+    expect(htmlMaker('div')('rocket boost')).to.eql('<div>rocket boost</div>');
 
     const liMaker = htmlMaker('li');
-    expect(liMaker('1st item')).to.eql('lil');
-    expect(liMaker('2nd item')).to.eql('lil');
+    expect(liMaker('1st item')).to.eql('<li>1st item</li>');
+    expect(liMaker('2nd item')).to.eql('<li>2nd item</li>');
   });
 });
